@@ -6,7 +6,7 @@ Rationale
 
 This is an initial attempt at writing a plugin (I may gemify it later) to solve a problem I have with processing uploaded files.  
 If any significant processing needs to be done, I don't want my web server to be tied up running image and audio conversions (especially audio conversions as they are quite time-consuming - video would be worse) in the middle of a request.
-I want to be able to hand this off to delayed job and have the processing done offline, and the resource updated when it has been processed.
+I want to be able to hand this off to delayed job and have the processing done offline, and the resource updated when it has been processed.  I initially started working with delayed_paperclip, but the datamapper support wasn't there.  So I've basically taken delayed_paperclip and updated it to use datamapper, and cleaned up and refactored/renamed where I thought that the ActiveRecord idioms were getting in the way or causing kludginess.
 
 Credit
 ------
@@ -16,7 +16,7 @@ Thanks to anybody who has contributed to either paperclip, or dm-paperclip, and 
 Status
 ------
 
-This is reasonably functional right now, but only works with Datamapper.  Ultimately I'd like to set it up for ActiveRecord as well, but I'll wait until I have a bit of time to work on it.
+This is reasonably functional right now, but only works with Datamapper.  Ultimately I'd like to set it up for ActiveRecord as well, but I'll wait until I have a bit more time to work on it.
 
 Usage
 -----
