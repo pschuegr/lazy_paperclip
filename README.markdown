@@ -59,3 +59,4 @@ Notes
 * What paperclip called processors I refer to as stylists, because I mentally separate the styling (performing actions on the resource which modify the look/sound/feel) from processing (everything that happens to the upload to produce the finished product) - processing can include many different stylists.  I hope that isn't too confusing for anybody.
 * Once the upload has been completed but the resource hasn't been processed yet, the resource can be represented by a placeholder => the "processing url".
 * the actual storage name/path which were interpolated by paperclip can now be lambdas.
+* Aaaand naturally I need to update the comments...
