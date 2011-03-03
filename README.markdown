@@ -11,7 +11,7 @@ I want to be able to hand this off to delayed job and have the processing done o
 Credit
 ------
 
-Thanks to anybody who has contributed to either paperclip, or dm-paperclip, and delayed job.
+Thanks to anybody who has contributed to either paperclip, or dm-paperclip, and delayed job, especially the originators and maintainers (thoughtbot/krobertson/snusnu/dkubb/tobi/collectiveidea)
 
 Status
 ------
@@ -52,4 +52,10 @@ Then you need to set up your resources.
 								:s3_content_disposition => ->(track) { "#{track.album.artist.name} - #{track.name}" },
 		end
 
+Notes
+------
 
+* I still have to rename the whole thing to LazyPaperclip instead of Paperclip.  
+* What paperclip called processors I refer to as stylists, because I mentally separate the styling (performing actions on the resource which modify the look/sound/feel) from processing (everything that happens to the upload to produce the finished product) - processing can include many different stylists.  I hope that isn't too confusing for anybody.
+* Once the upload has been completed but the resource hasn't been processed yet, the resource can be represented by a placeholder => the "processing url".
+* the actual storage name/path which were interpolated by paperclip can now be lambdas.
