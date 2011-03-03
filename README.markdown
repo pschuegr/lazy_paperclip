@@ -41,15 +41,15 @@ Then you need to set up your resources.
 			belongs_to :album
 
 			has_attached_file :audio,
-												:styles => { :mp3 => { :encoding => :mp3, :stylists => [:convert_audio]},
-																		 :ogg => { :encoding => :vorbis, :stylists => [:convert_audio]},
-																		 :flac => { :encoding => :flac, :stylists => [:convert_audio]}},
-												:path => ->(track) { "albums/#{Album.get(track.album_id).artist_id}/tracks/:id/:style.:ext" },
-												:processing_url => ->(track) { "/images/processing_track_:style.:ext}" },
-												:default_style => :mp3,
-												:storage => :s3,
-												:s3_credentials => File.join(Rails.root.to_s, "config", "s3.yml"),
-												:s3_content_disposition => ->(track) { "#{track.album.artist.name} - #{track.name}" },
+								:styles => { :mp3 => { :encoding => :mp3, :stylists => [:convert_audio]},
+														 :ogg => { :encoding => :vorbis, :stylists => [:convert_audio]},
+														 :flac => { :encoding => :flac, :stylists => [:convert_audio]}},
+								:path => ->(track) { "albums/#{Album.get(track.album_id).artist_id}/tracks/:id/:style.:ext" },
+								:processing_url => ->(track) { "/images/processing_track_:style.:ext}" },
+								:default_style => :mp3,
+								:storage => :s3,
+								:s3_credentials => File.join(Rails.root.to_s, "config", "s3.yml"),
+								:s3_content_disposition => ->(track) { "#{track.album.artist.name} - #{track.name}" },
 		end
 
 
